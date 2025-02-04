@@ -18,13 +18,16 @@ void main() {
     
     // setup
     await tester.pumpWidget(const MyApp());
-    final button = find.byType(AppBar).first;
+    final button = find.byType(FloatingActionButton).first;
 
     // action
     await tester.tap(button);
     await tester.tap(button);
     await tester.tap(button);
     await tester.tap(button);
+    await tester.tap(button);
+
+    await tester.pump();
 
     // assert
     expect(find.text('Успешно'), findsOneWidget);
